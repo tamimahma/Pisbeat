@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PISBEAT Flow Journal</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<header class="hero">
+
+<img
+src="logo.png"
+alt="PISBEAT Logo"
+class="logo"
+>
+
+<h1>
+PISBEAT
+</h1>
+
+<h2 class="subtitle">
+Flow Journal
+</h2>
+
+<p class="tagline">
+Where Colors Find Their Flow
+</p>
+
+</header>
+
+<!-- USER INFO -->
+
+<section class="card">
+
+<h2>
+✨ Start Your Flow
+</h2>
+
+<div class="form-grid">
+
+<label>
+Name *
+
+<input
+type="text"
+id="name"
+required
+>
+
+</label>
+
+<label>
+Email
+
+<input
+type="email"
+id="email"
+>
+
+</label>
+
+<label>
+Age Group
+
+<select id="ageGroup">
+
+<option value="">
+Select
+</option>
+
+<option>
+< 15
+</option>
+
+<option>
+15-18
+</option>
+
+<option>
+19-22
+</option>
+
+<option>
+23-30
+</option>
+
+<option>
+30+
+</option>
+
+</select>
+
+</label>
+
+<label>
+Status
+
+<select id="status">
+
+<option value="">
+Select
+</option>
+
+<option>
+Student
+</option>
+
+<option>
+College Student
+</option>
+
+<option>
+Employee
+</option>
+
+<option>
+Freelancer
+</option>
+
+<option>
+Entrepreneur
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+</label>
+
+</div>
+
+<label class="consent">
+
+<input
+type="checkbox"
+id="consent"
+>
+
+I agree to contribute my reflection data
+for PISBEAT research and development.
+
+</label>
+
+</section>
+
+<!-- COLORING STUDIO -->
+
+<section class="card">
+
+<h2>
+🎨 Coloring Studio
+</h2>
+
+<div class="toolbar">
+
+<button id="fillModeBtn" class="activeTool">
+🪣 Fill
+</button>
+
+<button id="brushModeBtn">
+🖌 Brush
+</button>
+
+<button id="eraserBtn">
+Eraser
+</button>
+
+<button id="undoBtn">
+Undo
+</button>
+
+<button id="redoBtn">
+Redo
+</button>
+
+<button id="resetBtn">
+Reset
+</button>
+
+<button id="downloadBtn">
+Download PNG
+</button>
+
+</div>
+
+<div class="brush-area">
+
+<label>
+
+Brush Size
+
+<input
+type="range"
+id="brushSize"
+min="2"
+max="40"
+value="10"
+>
+
+</label>
+
+<input
+type="color"
+id="colorPicker"
+value="#ff66cc"
+>
+
+</div>
+
+<!-- COLOR PALETTE -->
+
+<div id="palette">
+
+<button class="color" data-color="#ff69b4"></button>
+
+<button class="color" data-color="#ffc0cb"></button>
+
+<button class="color" data-color="#f8b4d9"></button>
+
+<button class="color" data-color="#9370db"></button>
+
+<button class="color" data-color="#b19cd9"></button>
+
+<button class="color" data-color="#4facfe"></button>
+
+<button class="color" data-color="#00c6ff"></button>
+
+<button class="color" data-color="#81ecec"></button>
+
+<button class="color" data-color="#55efc4"></button>
+
+<button class="color" data-color="#a3e635"></button>
+
+<button class="color" data-color="#facc15"></button>
+
+<button class="color" data-color="#fb923c"></button>
+
+<button class="color" data-color="#ef4444"></button>
+
+<button class="color" data-color="#ffffff"></button>
+
+<button class="color" data-color="#000000"></button>
+
+</div>
+
+<!-- CANVAS -->
+
+<div class="canvas-wrapper">
+
+<img
+id="outlineImage"
+src="camping-bunny.png"
+alt="Coloring Page"
+>
+
+<canvas id="drawCanvas"></canvas>
+
+</div>
+
+</section>
+
+<!-- FLOW METER -->
+
+<section class="card">
+
+<h2>
+⭐ Flow Meter
+</h2>
+
+<p>
+How immersed were you today?
+</p>
+
+<div class="rating">
+
+<label>
+<input type="radio" name="flowRating" value="1">
+⭐
+</label>
+
+<label>
+<input type="radio" name="flowRating" value="2">
+⭐⭐
+</label>
+
+<label>
+<input type="radio" name="flowRating" value="3">
+⭐⭐⭐
+</label>
+
+<label>
+<input type="radio" name="flowRating" value="4">
+⭐⭐⭐⭐
+</label>
+
+<label>
+<input type="radio" name="flowRating" value="5">
+⭐⭐⭐⭐⭐
+</label>
+
+</div>
+
+</section>
+
+<!-- COLOR STORY -->
+
+<section class="card">
+
+<h2>
+🌈 Color Story Analysis
+</h2>
+
+<div id="analysisResult">
+
+Start coloring to discover your
+creative flow story.
+
+</div>
+
+</section>
+
+<!-- REFLECTION -->
+
+<section class="card">
+
+<h2>
+📖 Reflection Corner
+</h2>
+
+<label>
+
+Artwork Title
+
+<input
+type="text"
+id="artworkTitle"
+>
+
+</label>
+
+<label>
+
+Mood Flow
+
+<select id="mood">
+
+<option value="">
+Select Mood
+</option>
+
+<option>
+🌈 Energized
+</option>
+
+<option>
+🌱 Growing
+</option>
+
+<option>
+🌊 Calm
+</option>
+
+<option>
+☁️ Unsure
+</option>
+
+<option>
+🌙 Tired
+</option>
+
+</select>
+
+</label>
+
+<label>
+
+Why did you choose these colors?
+
+<textarea
+id="reflectionAnswer"
+rows="5"
+></textarea>
+
+</label>
+
+<label>
+
+🌱 Gratitude Corner
+
+<textarea
+id="gratitude"
+rows="4"
+></textarea>
+
+</label>
+
+<label>
+
+📔 Reflection Diary
+
+<textarea
+id="diary"
+rows="10"
+></textarea>
+
+</label>
+
+</section>
+
+<!-- SAVE -->
+
+<section class="save-section">
+
+<button id="saveBtn">
+
+🌈 Save My Flow
+
+</button>
+
+<p id="statusMessage"></p>
+
+</section>
+
+<!-- CONFIG -->
+
+<script>
+
+const APPS_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbx6Ewowb9SvTo4g-GQubcXIQLFU90DbDEEiJ9Qz7wa9zHZmzxyJLvHtj-JuwLRqfIdH/exec";
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
